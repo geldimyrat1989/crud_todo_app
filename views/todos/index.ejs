@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+    <h1 class="text-center fw-bold">Things to do today</h1>
+    <!-- to loop over todos object and pass it over to the index.js -->
+    <% for(let t of todos) {%>
+        <div class="card text-center row text-dark bg-warning  mb-3 mx-auto" style="width: 18rem;">
+            <div class="card-header col">
+                <%= t.time.toUpperCase() %>:
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <%= t.thingsToDo %><br>
+                        <!-- to be able to see the particular todo we have link the id: -->
+                        <a href="/todos/<%= t.id %> " class="btn btn-primary mx-center">Details</a>
+
+                </li>
+            </ul>
+        </div>
+        <% } %>
+            <div class="text-center">
+                <a href="/todos/new" class="btn btn-primary mx-center">Add todo</a>
+            </div>
+            <%- include('partials/footer') %>

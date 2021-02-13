@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+    <!-- goes back to index page after todo added -->
+    <div class="row">
+        <div class="col-lg-4 mx-auto">
+            <h1>Add new things to do!</h1>
+            <form action="/todos" method="post">
+                <div class="mb-3">
+                    <label for="time" class="form-label">Time:</label>
+                    <input type="text" name="time" class="form-control" id="time" placeholder="Morning...">
+                </div>
+                <div class="mb-3">
+                    <label for="thingsToDo" class="form-label">Things to do:</label>
+                    <textarea class="form-control mb-3" name="thingsToDo" id="thingsToDo" rows="3"></textarea>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Add todo</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
